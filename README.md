@@ -4,7 +4,7 @@
 
 ## Install
 ```
-$ npm install -g delete-ds-store
+$ npm install -g delete-ds-store-cli
 ```
 
 ## Usage
