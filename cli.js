@@ -19,15 +19,12 @@ var pattern = (recursive ? '**/' : '') + '.DS_Store';
 
 var cliPath = cli.input[0] || process.cwd();
 
-console.log('path', cliPath);
-
 if (isDryRun) {
   glob(pattern, {cwd: cliPath}, function (err, files) {
     console.log('found', files.length, 'files:');
     console.log(files.join('\n'));
   });
 } else {
-  console.log('del path', path.resolve(cliPath, pattern));
   del(path.resolve(cliPath, pattern))
     .then(function (files) {
       console.log('deleted', files.length, 'files');
